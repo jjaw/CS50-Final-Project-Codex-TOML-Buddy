@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "JSON → TOML Converter",
+  "description": "Convert JSON snippets into TOML inside an offline-friendly popup.",
+  "version": "0.1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "JSON → TOML Converter"
+  }
+}
