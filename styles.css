@@ -47,10 +47,26 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+  background:
+    radial-gradient(140% 140% at 0% 0%, rgba(208, 188, 255, 0.12) 0%, transparent 58%),
+    radial-gradient(120% 120% at 100% 0%, rgba(88, 199, 150, 0.1) 0%, transparent 55%),
+    radial-gradient(140% 140% at 0% 100%, rgba(208, 188, 255, 0.08) 0%, transparent 60%),
+    radial-gradient(120% 120% at 100% 100%, rgba(88, 199, 150, 0.07) 0%, transparent 60%),
+    color-mix(in srgb, var(--md-sys-color-surface) 92%, white 8%);
+}
+
 body {
   margin: 0;
   min-width: 340px;
-  background: var(--md-sys-color-background);
+  min-height: 100vh;
+  background:
+    radial-gradient(140% 140% at 0% 0%, rgba(208, 188, 255, 0.12) 0%, transparent 58%),
+    radial-gradient(120% 120% at 100% 0%, rgba(88, 199, 150, 0.1) 0%, transparent 55%),
+    radial-gradient(140% 140% at 0% 100%, rgba(208, 188, 255, 0.08) 0%, transparent 60%),
+    radial-gradient(120% 120% at 100% 100%, rgba(88, 199, 150, 0.07) 0%, transparent 60%),
+    color-mix(in srgb, var(--md-sys-color-surface) 92%, white 8%);
   color: var(--md-sys-color-on-background);
   font-family: var(--font-sans);
   line-height: 1.45;
@@ -66,7 +82,12 @@ body {
   width: 360px;
   padding: 1.1rem 1.15rem 1.25rem;
   border-radius: var(--shape-large);
-  background: color-mix(in srgb, var(--md-sys-color-surface) 92%, white 8%);
+  background:
+    radial-gradient(140% 140% at 0% 0%, rgba(208, 188, 255, 0.12) 0%, transparent 58%),
+    radial-gradient(120% 120% at 100% 0%, rgba(88, 199, 150, 0.1) 0%, transparent 55%),
+    radial-gradient(140% 140% at 0% 100%, rgba(208, 188, 255, 0.08) 0%, transparent 60%),
+    radial-gradient(120% 120% at 100% 100%, rgba(88, 199, 150, 0.07) 0%, transparent 60%),
+    color-mix(in srgb, var(--md-sys-color-surface) 92%, white 8%);
   box-shadow: var(--shadow-level-2);
   border: 1px solid var(--md-sys-color-outline);
 }
@@ -240,3 +261,4 @@ body {
   color: color-mix(in srgb, var(--md-sys-color-secondary) 45%, white 55%);
   letter-spacing: 0.04em;
 }
+:root {
