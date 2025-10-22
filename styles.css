@@ -231,3 +231,12 @@ body {
 .status-message--hidden {
   display: none;
 }
+
+.legal {
+  margin: 0;
+  margin-top: 0.4rem;
+  text-align: center;
+  font-size: 0.72rem;
+  color: color-mix(in srgb, var(--md-sys-color-secondary) 45%, white 55%);
+  letter-spacing: 0.04em;
+}

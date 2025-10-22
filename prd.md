@@ -136,3 +136,12 @@ Add keyboard shortcuts for developers (Ctrl+Enter to convert).
 ✅ Handles nested JSON safely.
 ✅ Passes Chrome Web Store review (privacy-compliant).
 ✅ Styled with a consistent “retro terminal” aesthetic.
+
+
+[aptos-mcp]
+command = "npx"
+args = ["-y", "@aptos-labs/aptos-mcp"]
+type = "stdio"
+
+[aptos-mcp.env]
+APTOS_BOT_KEY = "<your_bot_api_key>"
