@@ -13,19 +13,19 @@ I built Codex TOML Buddy as a quick Chrome extension to convert Claude-style JSO
 
 ## File Breakdown
 
-### manifest.json
+`manifest.json`
 Defines the extension for Chrome (Manifest V3). I set the action popup to `popup.html`, provide the name "Codex TOML Buddy," and point to a small icon set so the extension looks consistent in the toolbar. No extra permissions are requested since everything runs locally inside the popup, which keeps Chrome's permission prompt clean and the review process straightforward.
 
-### popup.html
+`popup.html`
 Contains the UI for the popup window. There's a header with the title, an input textarea for JSON, an output textarea for TOML, and a footer toolbar with Convert, Copy, and Download buttons. I also added two status lines, one inside the JSON panel for neutral/error messages and one inside the TOML panel for success feedback. There is also a small footer note crediting the Good Rabbit Foundation because they inspired the idea and encouraged me to package this up.
 
-### popup.js
+`popup.js`
 Handles all the popup interactions. When the user clicks Convert, the script reads the JSON textarea, tries `JSON.parse`, and if that is successful, calls `jsonToToml`. Successful conversions enable the Copy and Download buttons, update the TOML textarea, and show a green message. Errors keep the TOML box empty and show a red warning under the JSON panel. Copy uses `navigator.clipboard.writeText`, download generates a `Blob` and triggers a download named `output.toml`, and the input listener clears old results as soon as the JSON box changes.
 
-### styles.css
+`styles.css`
 Tries to adhere to Google's Material Design 3 philosophy. I use a few CSS variables for background, accent, and status colors, then rely on flexbox for layout. Textareas get a subtle focus outline, buttons are pill-shaped with hover/press states, and the status lines stay readable with muted gray by default, green for success, and Material's dark-theme red for errors. The styling is intentionally straightforward so I can maintain it without advanced CSS features.
 
-### toml.js
+`toml.js`
 Provides the JSON to TOML conversion used in the popup. This is the heart and soul of the app. The function checks that the top level is an object, then walks it recursively, writing inline key/value pairs first, followed by child tables, and finally array tables for arrays of objects. Strings are escaped, keys with spaces are quoted, nulls and non-finite numbers are rejected, and arrays that mix objects with primitives throw a warning so the user knows why conversion failed. This covers the MCP configurations I've seen without implementing the entire TOML spec, and the file is short enough that I can read through it quickly when debugging. This parser will mostly only cover our use case of converting MCP config from JSON to TOML format. It will not cover most other use cases nor any edge case.
 
 ### Testing
