@@ -27,3 +27,7 @@ Most of my testing happens through Node and manual runs in Chrome. I run `node -
 I looked into using an existing TOML library like `@iarna/toml`, but the popular packages haven't been updated in years and would add extra bundle weight. Keeping the extension offline and lightweight felt more important, so I wrote `toml.js` to cover the shapes we actually use. The CSS stylesheet was a similar choice, rather than adopt an automated Material theme, I kept the CSS hand-written so I fully understand every piece of it and can explain design choices during a code review. If a better or updated TOML parser comes out, I will leverage its resource.
 
 All of the pieces work together as a simple pipeline: `manifest.json` points Chrome at the popup, `popup.html` lays out the interface, `styles.css` keeps it stylish and readable, `popup.js` drives user interactions, and `toml.js` performs the conversion. The project stays small enough for me to maintain while still solving the gap between Claude's JSON examples and Codex's TOML requirements. I use it whenever I need to copy configurations into Codex MCP, and it's already saved me plenty of time.
+
+#### References:
+[openai-codex-mcp-doc]: https://developers.openai.com/codex/mcp/
+[chrome-ext-manifest]: https://developer.chrome.com/docs/extensions/reference/manifest
