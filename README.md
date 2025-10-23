@@ -28,6 +28,10 @@ I looked into using an existing TOML library like `@iarna/toml`, but the popular
 
 All of the pieces work together as a simple pipeline: `manifest.json` points Chrome at the popup, `popup.html` lays out the interface, `styles.css` keeps it stylish and readable, `popup.js` drives user interactions, and `toml.js` performs the conversion. The project stays small enough for me to maintain while still solving the gap between Claude's JSON examples and Codex's TOML requirements. I use it whenever I need to copy configurations into Codex MCP, and it's already saved me plenty of time.
 
-#### References:
+## References
+
+- [OpenAI Codex MCP Documentation][openai-codex-mcp-doc]
+- [Chrome Extension Manifest Reference][chrome-ext-manifest]
+
 [openai-codex-mcp-doc]: https://developers.openai.com/codex/mcp/
 [chrome-ext-manifest]: https://developer.chrome.com/docs/extensions/reference/manifest
