@@ -16,34 +16,34 @@ function showInputStatus(message, intent = "neutral") {
   const { inputStatus, outputStatus } = elements;
   inputStatus.textContent = message;
   inputStatus.classList.remove(
-    "status-message--hidden",
-    "status-message--error",
-    "status-message--success"
+    "status-message-hidden",
+    "status-message-error",
+    "status-message-success"
   );
   if (intent === "error") {
-    inputStatus.classList.add("status-message--error");
+    inputStatus.classList.add("status-message-error");
   } else if (intent === "success") {
-    inputStatus.classList.add("status-message--success");
+    inputStatus.classList.add("status-message-success");
   }
 
   outputStatus.textContent = "";
-  outputStatus.classList.add("status-message--hidden");
-  outputStatus.classList.remove("status-message--error", "status-message--success");
+  outputStatus.classList.add("status-message-hidden");
+  outputStatus.classList.remove("status-message-error", "status-message-success");
 }
 
 function showOutputStatus(message, intent = "neutral") {
   const { inputStatus, outputStatus } = elements;
-  inputStatus.classList.add("status-message--hidden");
+  inputStatus.classList.add("status-message-hidden");
   outputStatus.textContent = message;
   outputStatus.classList.remove(
-    "status-message--hidden",
-    "status-message--error",
-    "status-message--success"
+    "status-message-hidden",
+    "status-message-error",
+    "status-message-success"
   );
   if (intent === "error") {
-    outputStatus.classList.add("status-message--error");
+    outputStatus.classList.add("status-message-error");
   } else if (intent === "success") {
-    outputStatus.classList.add("status-message--success");
+    outputStatus.classList.add("status-message-success");
   }
 }
 
@@ -69,7 +69,7 @@ elements.convertBtn.addEventListener("click", () => {
     const toml = jsonToToml(parsed);
     setTomlResult(toml);
     showOutputStatus("Conversion complete.", "success");
-    elements.inputStatus.classList.remove("status-message--error");
+    elements.inputStatus.classList.remove("status-message-error");
   } catch (err) {
     setTomlResult("");
     if (err instanceof SyntaxError) {
@@ -86,7 +86,7 @@ elements.copyBtn.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(elements.tomlOutput.value);
     showOutputStatus("TOML copied to clipboard.", "success");
-    elements.inputStatus.classList.remove("status-message--error", "status-message--success");
+    elements.inputStatus.classList.remove("status-message-error", "status-message-success");
   } catch (err) {
     showInputStatus("Clipboard copy failed. Try again.", "error");
   }
@@ -103,7 +103,7 @@ elements.downloadBtn.addEventListener("click", () => {
   anchor.click();
   URL.revokeObjectURL(url);
   showOutputStatus("Saved as output.toml.", "success");
-  elements.inputStatus.classList.remove("status-message--error", "status-message--success");
+  elements.inputStatus.classList.remove("status-message-error", "status-message-success");
 });
 
 elements.jsonInput.addEventListener("input", () => {

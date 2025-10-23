@@ -9,15 +9,15 @@
   <body>
     <main class="shell">
       <header class="shell__header">
-        <h1 class="shell__title">JSON → TOML</h1>
-        <p class="shell__subtitle">Local converter for Codex configs</p>
+        <h1 class="shell-title">JSON → TOML</h1>
+        <p class="shell-subtitle">Local converter for Codex configs</p>
       </header>
 
       <section class="panel panel--input">
-        <label class="panel__label" for="jsonInput">JSON</label>
+        <label class="panel-label" for="jsonInput">JSON</label>
         <textarea
           id="jsonInput"
-          class="panel__textarea"
+          class="panel-textarea"
           placeholder='Paste JSON here'
           spellcheck="false"
         ></textarea>
@@ -32,27 +32,27 @@
       </section>
 
       <section class="panel panel--output">
-        <label class="panel__label" for="tomlOutput">TOML</label>
+        <label class="panel-label" for="tomlOutput">TOML</label>
         <textarea
           id="tomlOutput"
-          class="panel__textarea"
+          class="panel-textarea"
           placeholder="# Converted TOML"
           spellcheck="false"
           readonly
         ></textarea>
         <p
           id="outputStatus"
-          class="status-message status-message--hidden"
+          class="status-message status-message-hidden"
           role="status"
           aria-live="polite"
         ></p>
       </section>
 
       <footer class="toolbar">
-        <div class="toolbar__actions">
+        <div class="toolbar-actions">
           <button id="copyBtn" class="btn" disabled>Copy</button>
           <button id="downloadBtn" class="btn" disabled>Download</button>
-          <button id="convertBtn" class="btn btn--primary">Convert</button>
+          <button id="convertBtn" class="btn btn-primary">Convert</button>
         </div>
       </footer>
 
